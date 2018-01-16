@@ -1,0 +1,14 @@
+<% breadcrumb :message, @message %>
+<p>
+  <strong>Title:</strong>
+  <%= @message.subject %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @message.text %>
+</p>
+
+<% parent_breadcrumb do |link| %>
+  <%= link_to "Back to #{link.text}", link.url %>
+<% end %>

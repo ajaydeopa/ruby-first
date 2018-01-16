@@ -1,0 +1,21 @@
+<% breadcrumb :articles, @articles %>
+
+<%= link_to 'New Article', controller: "articles", action: "new" %>
+
+<h1>Listing articles</h1> 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @articles = @articles.paginate(page: params[:page], per_page: 5) %>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @articles %>
