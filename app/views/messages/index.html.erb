@@ -9,7 +9,6 @@
     <th>Text</th>
   </tr>
  
-  <% @messages = @messages.paginate(page: params[:page], per_page: 5) %>
   <% @messages.each do |message| %>
     <tr>
       <td><%= message.subject %></td>

@@ -1,0 +1,3 @@
+entrypoint: '80'
+env: flex
+runtime: ruby

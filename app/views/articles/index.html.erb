@@ -9,7 +9,6 @@
     <th>Text</th>
   </tr>
  
-  <% @articles = @articles.paginate(page: params[:page], per_page: 5) %>
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>

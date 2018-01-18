@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   include ApplicationHelper
   def index
-		@messages = Message.all
+		@all_messages = Message.all
+		@messages = @all_messages.paginate(page: params[:page], per_page: 5)
 	end
 
   def new

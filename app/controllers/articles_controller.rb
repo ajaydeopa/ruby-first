@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
 	include ApplicationHelper
 	
 	def index
-		@articles = Article.all
+		@all_articles = Article.all
+		@articles = @all_articles.paginate(page: params[:page], per_page: 5)
 	end
 
   def new
